@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização de Compra | Street Sneakers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        light: '#f5f5f5',
+                        accent: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-light">
+    <header class="fixed w-full bg-black bg-opacity-90 shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider">STREET<span class="text-gray-400">SNEAKERS</span></a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-400 transition-colors">Início</a>
+                <a href="index.html#destaques" class="hover:text-gray-400 transition-colors">Destaques</a>
+                <a href="index.html#lancamentos" class="hover:text-gray-400 transition-colors">Lançamentos</a>
+                <a href="index.html#colecoes" class="hover:text-gray-400 transition-colors">Coleções</a>
+                <a href="index.html#sobre" class="hover:text-gray-400 transition-colors">Sobre</a>
+                <a href="compras.html" class="bg-light text-dark px-4 py-1 rounded-md hover:bg-gray-300 transition-colors">Comprar</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="compras.html" class="hover:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                
+                <button id="menu-button" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="menu-mobile md:hidden fixed top-0 left-0 h-screen w-4/5 bg-black bg-opacity-95 shadow-lg p-4">
+            <div class="flex justify-end">
+                <button id="close-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 mt-10 text-xl">
+                <a href="index.html" class="hover:text-gray-400 transition-colors">Início</a>
+                <a href="index.html#destaques" class="hover:text-gray-400 transition-colors">Destaques</a>
+                <a href="index.html#lancamentos" class="hover:text-gray-400 transition-colors">Lançamentos</a>
+                <a href="index.html#colecoes" class="hover:text-gray-400 transition-colors">Coleções</a>
+                <a href="index.html#sobre" class="hover:text-gray-400 transition-colors">Sobre</a>
+                <a href="compras.html" class="bg-light text-dark px-4 py-2 rounded-md inline-block mt-4 hover:bg-gray-300 transition-colors">Comprar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Finalização de Compra</h1>
+            
+            <!-- Indicadores de Etapa -->
+            <div class="flex justify-center mb-12">
+                <div class="flex items-center space-x-4 md:space-x-8">
+                    <div class="flex flex-col items-center">
+                        <div id="step-1" class="w-10 h-10 rounded-full bg-white text-dark flex items-center justify-center font-bold text-sm transition-all duration-500 step-indicator">1</div>
+                        <span class="text-xs mt-2 text-white">Dados Pessoais</span>
+                    </div>
+                    <div id="line-1" class="w-16 md:w-24 h-1 bg-gray-700 step-line"></div>
+                    <div class="flex flex-col items-center">
+                        <div id="step-2" class="w-10 h-10 rounded-full bg-gray-700 text-light flex items-center justify-center font-bold text-sm transition-all duration-500 step-indicator">2</div>
+                        <span class="text-xs mt-2 text-gray-400">Endereço</span>
+                    </div>
+                    <div id="line-2" class="w-16 md:w-24 h-1 bg-gray-700 step-line"></div>
+                    <div class="flex flex-col items-center">
+                        <div id="step-3" class="w-10 h-10 rounded-full bg-gray-700 text-light flex items-center justify-center font-bold text-sm transition-all duration-500 step-indicator">3</div>
+                        <span class="text-xs mt-2 text-gray-400">Pagamento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulários das Etapas -->
+            <div id="step1" class="bg-accent p-6 rounded-lg max-w-2xl mx-auto step-content">
+                <h2 class="text-xl font-bold mb-4">Dados Pessoais</h2>
+                <form id="personal-data-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium mb-2">Nome Completo</label>
+                        <input type="text" id="name" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium mb-2">E-mail</label>
+                        <input type="email" id="email" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium mb-2">Telefone</label>
+                        <input type="tel" id="phone" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="btn-primary py-2 px-6 rounded-md font-semibold">Próximo</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="step2" class="bg-accent p-6 rounded-lg max-w-2xl mx-auto hidden step-content">
+                <h2 class="text-xl font-bold mb-4">Endereço de Entrega</h2>
+                <form id="address-form">
+                    <div class="mb-4">
+                        <label for="cep" class="block text-sm font-medium mb-2">CEP</label>
+                        <input type="text" id="cep" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="street" class="block text-sm font-medium mb-2">Rua</label>
+                        <input type="text" id="street" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4 flex space-x-4">
+                        <div class="w-1/2">
+                            <label for="number" class="block text-sm font-medium mb-2">Número</label>
+                            <input type="text" id="number" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label for="complement" class="block text-sm font-medium mb-2">Complemento</label>
+                            <input type="text" id="complement" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="city" class="block text-sm font-medium mb-2">Cidade</label>
+                        <input type="text" id="city" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="state" class="block text-sm font-medium mb-2">Estado</label>
+                        <input type="text" id="state" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" id="back-to-step-1" class="py-2 px-6 rounded-md font-semibold bg-gray-700 hover:bg-gray-600">Voltar</button>
+                        <button type="submit" class="btn-primary py-2 px-6 rounded-md font-semibold">Próximo</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="step3" class="bg-accent p-6 rounded-lg max-w-2xl mx-auto hidden step-content">
+                <h2 class="text-xl font-bold mb-4">Informações de Pagamento</h2>
+                <form id="payment-form">
+                    <div class="mb-4">
+                        <label for="card-number" class="block text-sm font-medium mb-2">Número do Cartão</label>
+                        <input type="text" id="card-number" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="mb-4 flex space-x-4">
+                        <div class="w-1/2">
+                            <label for="expiry-date" class="block text-sm font-medium mb-2">Data de Validade</label>
+                            <input type="text" id="expiry-date" placeholder="MM/AA" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                        </div>
+                        <div class="w-1/2">
+                            <label for="cvv" class="block text-sm font-medium mb-2">CVV</label>
+                            <input type="text" id="cvv" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="card-name" class="block text-sm font-medium mb-2">Nome no Cartão</label>
+                        <input type="text" id="card-name" class="w-full p-2 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light" required>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" id="back-to-step-2" class="py-2 px-6 rounded-md font-semibold bg-gray-700 hover:bg-gray-600">Voltar</button>
+                        <button type="submit" class="btn-primary py-2 px-6 rounded-md font-semibold">Confirmar Pagamento</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Animação de Entrega -->
+            <div id="delivery-animation" class="hidden text-center max-w-2xl mx-auto mt-12">
+                <h2 class="text-xl font-bold mb-4">Seu Pedido Está a Caminho!</h2>
+                <p id="delivery-message" class="text-gray-400 mb-6">Seu pedido está sendo enviado...</p>
+                <div class="relative w-full h-64 bg-dark rounded-lg overflow-hidden">
+                    <div id="car" class="absolute bottom-2 left-0 w-32 h-32 transition-transform duration-[1500ms] ease-linear">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="white" class="w-full h-full">
+                            <path d="M171.3 96H224v96H111.3l30.4-75.9C146.5 104 158.2 96 171.3 96zM272 192V96h81.2c9.7 0 18.9 4.4 25 12l67.2 84H272zm256.2 1L428.2 68c-18.2-22.8-45.8-36-75-36H171.3c-39.3 0-74.6 23.9-89.1 60.3L40.6 196.4C16.8 205.8 0 228.9 0 256v112c0 17.7 14.3 32 32 32h33.3c7.6 45.4 47.1 80 94.7 80s87.1-34.6 94.7-80h130.6c7.6 45.4 47.1 80 94.7 80s87.1-34.6 94.7-80H608c17.7 0 32-14.3 32-32V320c0-65.2-48.8-119-111.8-127zM434.7 368a48 48 0 1 1 90.5 32 48 48 0 1 1-90.5-32zM160 336a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                        </svg>
+                    </div>
+                    <div id="road" class="absolute bottom-0 left-0 w-full h-12 bg-dark"></div>
+                </div>
+            </div>
+
+            <!-- Informações Finais do Pedido -->
+            <div id="order-confirmation" class="hidden bg-accent p-6 rounded-lg max-w-2xl mx-auto mt-12">
+                <h2 class="text-xl font-bold mb-4 text-center">Confirmação de Pedido</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between">
+                        <span class="font-medium">ID do Pedido:</span>
+                        <span id="order-id" class="font-bold">#SS123456</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium">Status:</span>
+                        <span class="text-green-500 font-bold">Confirmado</span>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <h3 class="text-lg font-semibold mb-2">Informações do Cliente</h3>
+                        <p><span class="font-medium">Nome:</span> <span id="confirm-name">-</span></p>
+                        <p><span class="font-medium">E-mail:</span> <span id="confirm-email">-</span></p>
+                        <p><span class="font-medium">Telefone:</span> <span id="confirm-phone">-</span></p>
+                    </div>
+                    <div class="border-t border-gray-700 pt-4">
+                        <h3 class="text-lg font-semibold mb-2">Endereço de Entrega</h3>
+                        <p><span class="font-medium">Rua:</span> <span id="confirm-street">-</span>, <span id="confirm-number">-</span></p>
+                        <p><span class="font-medium">Complemento:</span> <span id="confirm-complement">-</span></p>
+                        <p><span class="font-medium">Cidade:</span> <span id="confirm-city">-</span> - <span id="confirm-state">-</span></p>
+                        <p><span class="font-medium">CEP:</span> <span id="confirm-cep">-</span></p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-6">
+                    <a href="index.html" class="btn-primary py-2 px-6 rounded-md font-semibold">Voltar à Loja</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">STREET<span class="text-gray-400">SNEAKERS</span></h3>
+                    <p class="text-gray-400">Seu estilo, seu ritmo, seu caminho.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categorias</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-light transition-colors">Running</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Lifestyle</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Basketball</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Skate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ajuda</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-light transition-colors">Dúvidas Frequentes</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Trocas e Devoluções</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>contato@streetsneakers.com</li>
+                        <li>(11) 9999-9999</li>
+                        <li>Rua das Ruas, 123 - São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Street Sneakers. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 

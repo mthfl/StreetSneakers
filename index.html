@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Sneakers | Tênis Street Wear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        light: '#f5f5f5',
+                        accent: '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-light">
+
+    <header class="fixed w-full bg-black bg-opacity-90 shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-wider">STREET<span class="text-gray-400">SNEAKERS</span></a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-gray-400 transition-colors">Início</a>
+                <a href="#destaques" class="hover:text-gray-400 transition-colors">Destaques</a>
+                <a href="#lancamentos" class="hover:text-gray-400 transition-colors">Lançamentos</a>
+                <a href="#colecoes" class="hover:text-gray-400 transition-colors">Coleções</a>
+                <a href="#sobre" class="hover:text-gray-400 transition-colors">Sobre</a>
+                <a href="compras.html" class="bg-light text-dark px-4 py-1 rounded-md hover:bg-gray-300 transition-colors">Comprar</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="compras.html" class="hover:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                
+                <button id="menu-button" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="menu-mobile md:hidden fixed top-0 left-0 h-screen w-4/5 bg-black bg-opacity-95 shadow-lg p-4">
+            <div class="flex justify-end">
+                <button id="close-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6 mt-10 text-xl">
+                <a href="#inicio" class="hover:text-gray-400 transition-colors">Início</a>
+                <a href="#destaques" class="hover:text-gray-400 transition-colors">Destaques</a>
+                <a href="#lancamentos" class="hover:text-gray-400 transition-colors">Lançamentos</a>
+                <a href="#colecoes" class="hover:text-gray-400 transition-colors">Coleções</a>
+                <a href="#sobre" class="hover:text-gray-400 transition-colors">Sobre</a>
+                <a href="compras.html" class="bg-light text-dark px-4 py-2 rounded-md inline-block mt-4 hover:bg-gray-300 transition-colors">Comprar</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-on-scroll">ESTILO NAS RUAS</h1>
+            <p class="text-xl md:text-2xl mb-8 animate-on-scroll">A melhor seleção de tênis para o seu estilo urbano</p>
+            <a href="#destaques" class="btn-primary py-3 px-8 rounded-md font-semibold inline-block animate-on-scroll">EXPLORAR COLEÇÃO</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="destaques" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold animate-on-scroll">DESTAQUES</h2>
+                <a href="compras.html" class="bg-accent hover:bg-dark border border-light py-2 px-4 rounded-md transition-colors">VER TODOS</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Produto 1 -->
+                <div class="product-card bg-accent rounded-lg overflow-hidden transition-all duration-300 animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1588099768531-a72d4a198538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Urban Runner" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-light text-dark text-xs font-bold px-2 py-1 rounded-full">
+                            -15%
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Urban Runner</h3>
+                        <p class="text-gray-400 mb-4">Estilo urbano com máximo conforto</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-xl">R$ 399,90</span>
+                                <span class="text-gray-400 text-sm line-through ml-2">R$ 469,90</span>
+                            </div>
+                            <a href="compras.html" class="btn-primary px-4 py-2 rounded-md text-sm">COMPRAR</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="product-card bg-accent rounded-lg overflow-hidden transition-all duration-300 animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Street Classic" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Street Classic</h3>
+                        <p class="text-gray-400 mb-4">Clássico reinventado para as ruas</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">R$ 349,90</span>
+                            <a href="compras.html" class="btn-primary px-4 py-2 rounded-md text-sm">COMPRAR</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="product-card bg-accent rounded-lg overflow-hidden transition-all duration-300 animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1465&q=80" alt="Metro Flex" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-light text-dark text-xs font-bold px-2 py-1 rounded-full">
+                            TOP
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Metro Flex</h3>
+                        <p class="text-gray-400 mb-4">Flexibilidade para o dia a dia</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">R$ 429,90</span>
+                            <a href="compras.html" class="btn-primary px-4 py-2 rounded-md text-sm">COMPRAR</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 4 -->
+                <div class="product-card bg-accent rounded-lg overflow-hidden transition-all duration-300 animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Urban Hiker" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-light text-dark text-xs font-bold px-2 py-1 rounded-full">
+                            NOVO
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Urban Hiker</h3>
+                        <p class="text-gray-400 mb-4">Performance urbana em qualquer terreno</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-xl">R$ 469,90</span>
+                            <a href="compras.html" class="btn-primary px-4 py-2 rounded-md text-sm">COMPRAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Releases Section (Slider) -->
+    <section id="lancamentos" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold animate-on-scroll">LANÇAMENTOS</h2>
+                <a href="compras.html" class="bg-accent hover:bg-dark border border-light py-2 px-4 rounded-md transition-colors">VER TODOS</a>
+            </div>
+            
+            <div class="relative slider-container" aria-roledescription="carrossel" aria-label="Lançamentos de tênis">
+                <!-- Indicação de swipe para dispositivos móveis -->
+                <div class="md:hidden text-center text-gray-400 mb-4 animate-pulse">
+                    <p>Deslize para ver mais produtos</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </div>
+                
+                <!-- Slider Container -->
+                <div class="overflow-hidden">
+                    <!-- Slider Item 1 -->
+                    <div class="slider-item" role="tabpanel" aria-roledescription="slide" aria-label="Street Shadow X9" aria-hidden="false" tabindex="0">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tênis Street Shadow X9" class="w-full transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="md:w-1/2 mt-6 md:mt-0">
+                                <span class="inline-block bg-light text-dark text-sm font-bold px-3 py-1 rounded-full mb-4">NOVO</span>
+                                <h3 class="text-2xl font-bold mb-4">STREET SHADOW X9</h3>
+                                <p class="text-gray-400 mb-6">A nova linha Street Shadow traz inovação em design e conforto. Desenvolvido com tecnologia de absorção de impacto, o X9 proporciona estabilidade e estilo para quem vive o lifestyle urbano.</p>
+                                
+                                <!-- Cores disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Cores</h4>
+                                    <div class="flex space-x-2">
+                                        <span class="w-6 h-6 rounded-full bg-black border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-gray-500 border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-white border border-gray-400 transition-transform hover:scale-125"></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tamanhos disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Tamanhos</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">38</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">39</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">40</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">41</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">42</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">43</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                                    <div>
+                                        <span class="block text-gray-400">Preço</span>
+                                        <span class="text-2xl font-bold">R$ 599,90</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-gray-400">Disponibilidade</span>
+                                        <span class="text-green-500">Em estoque</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-4">
+                                    <a href="compras.html" class="btn-primary py-3 px-8 rounded-md font-semibold inline-block transition-transform hover:scale-105">COMPRAR AGORA</a>
+                                    <button class="add-to-cart bg-transparent border border-light py-3 px-4 rounded-md hover:bg-accent transition-colors" data-product="Street Shadow X9">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Item 2 -->
+                    <div class="slider-item" role="tabpanel" aria-roledescription="slide" aria-label="Street Flow Elite" aria-hidden="true" tabindex="-1">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Novo Lançamento" class="w-full transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="md:w-1/2 mt-6 md:mt-0">
+                                <span class="inline-block bg-light text-dark text-sm font-bold px-3 py-1 rounded-full mb-4">NOVO</span>
+                                <h3 class="text-2xl font-bold mb-4">STREET FLOW ELITE</h3>
+                                <p class="text-gray-400 mb-6">Para quem busca performance sem abrir mão do estilo. O novo Street Flow Elite traz solado reforçado e cabedal respirável, ideal para o dia a dia agitado da cidade.</p>
+                                
+                                <!-- Cores disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Cores</h4>
+                                    <div class="flex space-x-2">
+                                        <span class="w-6 h-6 rounded-full bg-black border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-white border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-blue-600 border border-gray-400 transition-transform hover:scale-125"></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tamanhos disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Tamanhos</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">38</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">39</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">40</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">41</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">42</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                                    <div>
+                                        <span class="block text-gray-400">Preço</span>
+                                        <span class="text-2xl font-bold">R$ 549,90</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-gray-400">Disponibilidade</span>
+                                        <span class="text-yellow-500">Poucas unidades</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-4">
+                                    <a href="compras.html" class="btn-primary py-3 px-8 rounded-md font-semibold inline-block transition-transform hover:scale-105">COMPRAR AGORA</a>
+                                    <button class="add-to-cart bg-transparent border border-light py-3 px-4 rounded-md hover:bg-accent transition-colors" data-product="Street Flow Elite">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Item 3 (Novo) -->
+                    <div class="slider-item" role="tabpanel" aria-roledescription="slide" aria-label="Court Champion" aria-hidden="true" tabindex="-1">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="md:w-1/2 overflow-hidden rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Novo Lançamento" class="w-full transition-transform duration-500 hover:scale-105">
+                            </div>
+                            <div class="md:w-1/2 mt-6 md:mt-0">
+                                <span class="inline-block bg-light text-dark text-sm font-bold px-3 py-1 rounded-full mb-4">NOVO</span>
+                                <h3 class="text-2xl font-bold mb-4">COURT CHAMPION</h3>
+                                <p class="text-gray-400 mb-6">Desenvolvido para os amantes do basquete com tecnologia de alta performance. Estabilidade, tração e estilo para dominar as quadras com confiança e presença.</p>
+                                
+                                <!-- Cores disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Cores</h4>
+                                    <div class="flex space-x-2">
+                                        <span class="w-6 h-6 rounded-full bg-black border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-white border border-gray-400 transition-transform hover:scale-125"></span>
+                                        <span class="w-6 h-6 rounded-full bg-blue-600 border border-gray-400 transition-transform hover:scale-125"></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tamanhos disponíveis -->
+                                <div class="mb-6">
+                                    <h4 class="text-sm uppercase text-gray-400 mb-2">Tamanhos</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">40</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">41</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">42</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">43</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">44</span>
+                                        <span class="w-8 h-8 flex items-center justify-center border border-gray-400 rounded-md text-sm transition-all hover:bg-light hover:text-dark">45</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                                    <div>
+                                        <span class="block text-gray-400">Preço</span>
+                                        <span class="text-2xl font-bold">R$ 479,90</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-gray-400">Disponibilidade</span>
+                                        <span class="text-green-500">Em estoque</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-4">
+                                    <a href="compras.html" class="btn-primary py-3 px-8 rounded-md font-semibold inline-block transition-transform hover:scale-105">COMPRAR AGORA</a>
+                                    <button class="add-to-cart bg-transparent border border-light py-3 px-4 rounded-md hover:bg-accent transition-colors" data-product="Court Champion">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Controls - Adicionar classes para melhorar visibilidade em dispositivos móveis -->
+                <button id="prev-slide" class="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 bg-black bg-opacity-70 p-2 md:p-3 rounded-full hover:bg-accent transition-colors z-10 backdrop-blur-sm" aria-label="Slide anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-slide" class="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 bg-black bg-opacity-70 p-2 md:p-3 rounded-full hover:bg-accent transition-colors z-10 backdrop-blur-sm" aria-label="Próximo slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Slider Dots - Movidos para baixo da seção -->
+            <div class="flex justify-center mt-8 space-x-3" role="tablist" aria-label="Controles do slider de produtos">
+                <button class="w-3 h-3 bg-light rounded-full opacity-100 slider-dot cursor-pointer transition-transform hover:scale-125" data-index="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                <button class="w-3 h-3 bg-light rounded-full opacity-50 slider-dot cursor-pointer transition-transform hover:scale-125" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                <button class="w-3 h-3 bg-light rounded-full opacity-50 slider-dot cursor-pointer transition-transform hover:scale-125" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="colecoes" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center animate-on-scroll">COLEÇÕES</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coleção 1 -->
+                <div class="relative overflow-hidden rounded-lg group animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Urban Collection" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-2">URBAN COLLECTION</h3>
+                            <p class="text-gray-300 mb-4">Estilo para a selva de pedra</p>
+                            <a href="#" class="btn-primary py-2 px-6 rounded-md inline-block">VER COLEÇÃO</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coleção 2 -->
+                <div class="relative overflow-hidden rounded-lg group animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1604671801908-6f0c6a092c05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Street Art Collection" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-2">STREET ART</h3>
+                            <p class="text-gray-300 mb-4">A arte urbana nos seus pés</p>
+                            <a href="#" class="btn-primary py-2 px-6 rounded-md inline-block">VER COLEÇÃO</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coleção 3 -->
+                <div class="relative overflow-hidden rounded-lg group animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1431&q=80" alt="Performance Collection" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-2">PERFORMANCE</h3>
+                            <p class="text-gray-300 mb-4">Desempenho para os desafios urbanos</p>
+                            <a href="#" class="btn-primary py-2 px-6 rounded-md inline-block">VER COLEÇÃO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <div class="w-full max-w-3xl">
+                    <h2 class="text-3xl font-bold mb-6 animate-on-scroll">NOSSA HISTÓRIA</h2>
+                    <p class="text-gray-400 mb-6 animate-on-scroll">A Street Sneakers nasceu da paixão pelo lifestyle urbano e pela cultura de rua. Desde 2010, nos dedicamos a oferecer tênis que combinam estilo, conforto e durabilidade para quem vive a intensidade das cidades.</p>
+                    <p class="text-gray-400 mb-8 animate-on-scroll">Nossas coleções são desenvolvidas por designers que vivem e respiram a cultura street, trazendo autenticidade para cada modelo. Utilizamos materiais de alta qualidade e tecnologias inovadoras para garantir que cada par de tênis não seja apenas uma peça de moda, mas um item essencial para o dia a dia urbano.</p>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-accent">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4 animate-on-scroll">FIQUE POR DENTRO</h2>
+            <p class="text-gray-400 mb-8 max-w-xl mx-auto animate-on-scroll">Assine nossa newsletter e seja o primeiro a saber sobre lançamentos, promoções exclusivas e novidades do mundo street.</p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto animate-on-scroll">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow py-3 px-4 rounded-md bg-dark border border-gray-700 text-light focus:outline-none focus:border-light">
+                <button type="submit" class="btn-primary py-3 px-6 rounded-md font-semibold">ASSINAR</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">STREET<span class="text-gray-400">SNEAKERS</span></h3>
+                    <p class="text-gray-400">Seu estilo, seu ritmo, seu caminho.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categorias</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-light transition-colors">Running</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Lifestyle</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Basketball</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Skate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ajuda</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-light transition-colors">Dúvidas Frequentes</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Trocas e Devoluções</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-light transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+             
+                <div class="mt-4 flex flex-col items-center">
+                    <p class="mb-2">Desenvolvido por <span class="font-semibold text-light">Matheus Felix</span> <span class="text-xs">(Front-end)</span></p>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="https://www.linkedin.com/in/matheus-fl" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-light transition-colors" title="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/mthfl" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-light transition-colors" title="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:matheus.dev91@gmail.com" class="text-gray-400 hover:text-light transition-colors" title="Email">
+                            <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
